@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainbackground"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context=".Task">
+
+    <include
+        android:id="@+id/toolbar2"
+        layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:id="@+id/tsk_scrol"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+
+        app:layout_constraintTop_toBottomOf="@id/toolbar2"
+
+
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/cl_dubparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:paddingBottom="50dp"
+            app:layout_constraintTop_toTopOf="@+id/tsk_scrol">
+
+            <LinearLayout
+                android:id="@+id/ll_hp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/catr_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/task_hp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="3"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="3dp"
+                        android:text="High Priority"
+                        android:textColor="@color/white"
+                        android:textSize="23sp" />
+
+                    <ImageButton
+                        android:id="@+id/tsk_bt_hp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:background="@android:drawable/divider_horizontal_bright"
+
+                        android:paddingTop="4dp"
+                        android:paddingBottom="3dp"
+                        android:src="@drawable/ic_drop_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tsk_ll_hp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/task_catgri_bkground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/hp_notext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No_Task_to_show"
+                        android:textColor="#B56E6F75"
+                        android:textSize="20sp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+
+                    </TextView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/task_rv_hp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_lp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_hp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/catr_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/task_lp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="3"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="3dp"
+                        android:text="Low Priority"
+                        android:textColor="@color/white"
+                        android:textSize="23sp" />
+
+                    <ImageButton
+                        android:id="@+id/tsk_bt_lp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:background="@android:drawable/divider_horizontal_bright"
+
+                        android:paddingTop="4dp"
+                        android:paddingBottom="3dp"
+                        android:src="@drawable/ic_drop_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tsk_ll_lp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/task_catgri_bkground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/lp_notext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No_Task_to_show"
+                        android:textColor="#B56E6F75"
+                        android:textSize="20sp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+
+                    </TextView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/task_rv_lp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_imp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_lp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/catr_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/task_imp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="3"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="3dp"
+                        android:text="Important"
+                        android:textColor="@color/white"
+                        android:textSize="23sp" />
+
+                    <ImageButton
+                        android:id="@+id/tsk_bt_imp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:background="@android:drawable/divider_horizontal_bright"
+
+                        android:paddingTop="4dp"
+                        android:paddingBottom="3dp"
+                        android:src="@drawable/ic_drop_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tsk_ll_imp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/task_catgri_bkground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/imp_notext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No_Task_to_show"
+                        android:textColor="#B56E6F75"
+                        android:textSize="20sp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+
+                    </TextView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/task_rv_imp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_imp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/catr_background"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/task_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="3"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="3dp"
+                        android:text="Other"
+                        android:textColor="@color/white"
+                        android:textSize="23sp" />
+
+                    <ImageButton
+                        android:id="@+id/tsk_bt_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:background="@android:drawable/divider_horizontal_bright"
+
+                        android:paddingTop="4dp"
+                        android:paddingBottom="3dp"
+                        android:src="@drawable/ic_drop_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tsk_ll_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/task_catgri_bkground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/other_notext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No_Task_to_show"
+                        android:textColor="#B56E6F75"
+                        android:textSize="20sp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+
+
+                    </TextView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/task_rv_other"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/taskfab"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/fab_backgrd"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add"
+        tools:ignore="UsingOnClickInXml" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
